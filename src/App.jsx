@@ -7,11 +7,15 @@ import Contador from './componentes/Contador/Contador';
 import Categorias from './componentes/Categorias/Categorias';
 import UseRef from './componentes/UseRef/UseRef';
 import UseRefDom from './componentes/UseRefDom/UseRefDom';
+import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer';
+import JsonPlaceHolder from './componentes/Fetch/JsonPlaceHolder';
+import Nesflic from './componentes/Fetch/Nesflic';
+import TodoList from './componentes/TodoList/TodoList';
 
 function App() {
   return (
     <>
-    <NavBar/>
+   {/*  <NavBar/>
     <ItemListContainer greeting="Bienvenidos a nuestra TIENDA"/>
     <ItemCount/>
     <Vista/>
@@ -19,6 +23,11 @@ function App() {
     <Categorias/>
     <UseRef/>
     <UseRefDom/>
+    <ItemDetailContainer/> */}
+    {/* <JsonPlaceHolder/> */}
+    <Nesflic/>
+    <TodoList/>
+    
     </>
    );
 }

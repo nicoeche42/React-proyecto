@@ -4,7 +4,7 @@ const Promesas = () => {
 
     setTimeout(() => {
         console.log("Tarea A");
-    }, 2000)
+    }, 100)
     setTimeout(() => {
         console.log("Tarea B");
     }, 1000)

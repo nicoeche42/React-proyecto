@@ -5,7 +5,6 @@ import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailCon
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
-
 function App() {
 
   return (
@@ -16,11 +15,21 @@ function App() {
           <Route path="/" element={<ItemListContainer />} />
           <Route path="/categoria/:idCategoria" element={<ItemListContainer />} />
           <Route path="/item/:idItem" element={<ItemDetailContainer />} />
+          <Route path="*" element={<h2>Sitio en construccion</h2>}/>
         </Routes>
       </BrowserRouter>
-    
+
     </>
   );
 }
 
 export default App;
+
+
+/* import Eventos from './componentes/Eventos/Eventos';
+import Escuchadores from "./componentes/Escuchadores/Escuchadores";
+import Formulario from "./componentes/Formulario/Formulario"; */
+
+/*   <Eventos/>
+  <Formulario />
+  <Escuchadores/> */

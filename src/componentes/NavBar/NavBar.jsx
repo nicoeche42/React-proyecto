@@ -7,7 +7,7 @@ const NavBar = () => {
   return (
     <header>
       <Link to={"/"}>
-        <img src="https://solaccursiopasteleria.netlify.app/public/image/logoSol2.png" alt="logoSolAccursioPasteleria" />
+        <img className='imgLogo' src="https://solaccursiopasteleria.netlify.app/public/image/logoSol2.png" alt="logoSolAccursioPasteleria" />
       <h1>Sol Accursio Pasteleria</h1>
       </Link>
       

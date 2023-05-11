@@ -1,4 +1,3 @@
-import React from 'react'
 import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount'
 import { Link } from 'react-router-dom'
@@ -27,7 +26,7 @@ const ItemDetail = ({ id, nombre, precio, img, stock }) => {
       <h3>Precio: {precio} </h3>
       <h3> ID: {id} </h3>
       <p>Descripcion del Producto</p>
-      <img src={img} alt={nombre} />
+      <img src={img} alt={nombre} className='imgItemDetail'/>
       {
         agregarCantidad > 0 ? (<Link to="/cart"> Terminar Compra </Link>) : (<ItemCount inicial={1} stock={stock} funcionAgregar={manejadorCantidad} />)
       }

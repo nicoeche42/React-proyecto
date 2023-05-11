@@ -3,6 +3,7 @@
     border: 1px solid #e3e1e1;
     margin: 3rem;
 }
-img {
+imgItemDetail {
     width: 50vw;
+    max-width: 100px;
 }

@@ -1,3 +1,18 @@
+header {
+    grid-area: header;
+    grid-column: 1;
+    grid-row: 1;
+    background-color: #582805;
+    text-align: center;
+    color: white;
+    font-family: cursive,Arial;
+    text-decoration: none;
+}
+
+.contenedorProductos {
+  background-image: url(/public/img/fondoSol5.png);
+  background-repeat: repeat;
+}
 .App {
   text-align: center;
 }

@@ -1,4 +1,3 @@
-import React from 'react'
 import './ItemCount.css';
 import { useState } from 'react'
 

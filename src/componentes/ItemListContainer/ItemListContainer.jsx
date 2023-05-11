@@ -1,7 +1,5 @@
-import React from 'react'
 import './ItemListContainer.css'
 import { useState, useEffect } from 'react'
-import { getproductos, getProductosPorCategoria } from '../../asyncmock'
 import ItemList from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
 import { collection, getDocs, where, query } from 'firebase/firestore'
@@ -24,22 +22,10 @@ const ItemListContainer = ( {greeting} ) => {
         setproductos(nuevosProductos)
       })
       .catch(error => console.log(error))
-  }, [])
-
-  /*   useEffect(() => {
-  
-      const funcionProductos = idCategoria ? getProductosPorCategoria : getproductos;
-  
-  
-  
-      funcionProductos(idCategoria)
-        .then(res => setproductos(res))
-        .catch(error => console.error(error))
-    }, [idCategoria]) */
-
+  }, [idCategoria])
 
   return (
-    <div>
+    <div className='fondoPage'>
       <h2 className='subtitulo'>{greeting} </h2>
       <h2>Productos</h2>
       <ItemList productos={productos} />

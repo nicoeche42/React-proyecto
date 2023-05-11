@@ -1,9 +1,8 @@
-import React from 'react'
 import { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { CarritoContext } from '../../context/CarritoContext'
 import { db } from '../../services/firebase/config'
-import { collection, addDoc, doc } from 'firebase/firestore'
+import { collection, addDoc } from 'firebase/firestore'
 
 const Checkout = () => {
     const { carrito, vaciarCarrito } = useContext(CarritoContext);
@@ -87,7 +86,7 @@ const Checkout = () => {
                     <input type="email" value={emailConfirmacion} onChange={(e) => setEmailConfirmacion(e.target.value)} />
                 </div>
                 {error && <p style={{ color: "red" }}> {error} </p>}
-                <button type='submit'>Finalizar Compra</button>
+                <button type='submit'>Enviar Pedido</button>
 
             </form>
             {

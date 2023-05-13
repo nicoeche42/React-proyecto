@@ -2,7 +2,7 @@ import { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { CarritoContext } from '../../context/CarritoContext'
 import { db } from '../../services/firebase/config'
-import { collection, addDoc } from 'firebase/firestore'
+import { collection, addDoc, updateDoc, doc, writeBatch } from 'firebase/firestore'
 
 const Checkout = () => {
     const { carrito, vaciarCarrito } = useContext(CarritoContext);
@@ -14,7 +14,7 @@ const Checkout = () => {
     const [error, setError] = useState("");
     const [ordenId, setOrdenId] = useState("");
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         if (!nombre || !apellido || !telefono || !email || !emailConfirmacion) {
             setError("Por favor complete todos los campos");
@@ -39,17 +39,22 @@ const Checkout = () => {
             email
         };
 
-        addDoc(collection(db, "ordenes"), orden)
-            .then((docRef) => {
-                setOrdenId(docRef.id);
-                vaciarCarrito();
-            })
-            .catch((error) => {
-                console.error("Error al crear la orden", error);
-                setError("Se produjo un error al procesar el pedido");
-            })
-    }
+        try {
+            const ordenRef = await addDoc(collection(db, "ordenes"), orden); setOrdenId(ordenRef.id);
+            vaciarCarrito();
 
+            const batch = writeBatch(db);
+            carrito.forEach((producto) => {
+                const productoRef = doc(db, "productos", producto.item.id);
+                console.log("producto.item.stock: ", producto.item.stock, typeof producto.item.stock);
+                console.log("producto.cantidad: ", producto.cantidad, typeof producto.cantidad);
+                batch.update(productoRef, { stock: parseInt(producto.stock) - parseInt(producto.cantidad) });
+            });
+            await batch.commit();
+        } catch (error) {
+            setError("Se produjo un error al procesar el pedido");
+        }
+    }
     return (
         <div>
             <h2>Checkout</h2>

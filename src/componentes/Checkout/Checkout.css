@@ -1,0 +1,26 @@
+.contenedorCheckout {
+    text-align: center;
+    border: 1px solid #e3e1e1;
+    margin: 10rem;
+    background-color: #582805;
+    color: white;
+    text-shadow: black 0.1em 0.1em 0.2em;
+    width: 50vh;
+}
+body{
+    background-image: url(/public/img/fondoSol5.png);
+    background-repeat: repeat;
+}
+.btn-checkout{
+    border: none;
+    background-color: #ffccd2;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+    text-shadow: black 0.1em 0.1em 0.2em;
+}

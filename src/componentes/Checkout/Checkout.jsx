@@ -1,3 +1,4 @@
+import './Checkout.css' 
 import { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { CarritoContext } from '../../context/CarritoContext'
@@ -57,7 +58,7 @@ const Checkout = () => {
 
     }
     return (
-        <div>
+        <div className='contenedorCheckout'>
             <h2>Checkout</h2>
             <form onSubmit={handleSubmit}>
                 {carrito.map((producto) => (
@@ -92,7 +93,7 @@ const Checkout = () => {
                     <input type="email" value={emailConfirmacion} onChange={(e) => setEmailConfirmacion(e.target.value)} />
                 </div>
                 {error && <p style={{ color: "red" }}> {error} </p>}
-                <button type='submit'>Enviar Pedido</button>
+                <button type='submit' className='btn-checkout'>Enviar Pedido</button>
 
             </form>
             {

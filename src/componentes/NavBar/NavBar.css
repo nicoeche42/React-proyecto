@@ -33,3 +33,6 @@ li {
     cursor: pointer;
     text-shadow: black 0.1em 0.1em 0.2em;
 }
+nav ul li a {
+    text-decoration: none;
+  }

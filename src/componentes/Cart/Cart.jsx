@@ -16,7 +16,7 @@ const Cart = () => {
         return (
             <>
                 <h2 className='cart-title'>No hay productos en el carrito 😢😢</h2>
-                <Link to='/' className='cart-footer'>Agrega Productos al carrito 👍🤝</Link>
+                <Link to='/' className='cart-title'>Agrega Productos al carrito 👍🤝</Link>
             </>
         )
     }

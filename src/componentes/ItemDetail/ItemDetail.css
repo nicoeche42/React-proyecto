@@ -1,9 +1,16 @@
 .contenedorItem {
     text-align: center;
     border: 1px solid #e3e1e1;
-    margin: 3rem;
+    margin: 10rem;
+    background-color: #582805;
+    color: white;
+    text-shadow: black 0.1em 0.1em 0.2em;
+    width: 50vh;
 }
-imgItemDetail {
-    width: 50vw;
-    max-width: 100px;
+.imgItemDetail {
+    width: 50vh;
+}
+body{
+    background-image: url(/public/img/fondoSol5.png);
+    background-repeat: repeat;
 }

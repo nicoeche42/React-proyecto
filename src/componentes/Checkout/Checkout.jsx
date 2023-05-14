@@ -48,12 +48,13 @@ const Checkout = () => {
                 const productoRef = doc(db, "productos", producto.item.id);
                 console.log("producto.item.stock: ", producto.item.stock, typeof producto.item.stock);
                 console.log("producto.cantidad: ", producto.cantidad, typeof producto.cantidad);
-                batch.update(productoRef, { stock: parseInt(producto.stock) - parseInt(producto.cantidad) });
+                batch.update(productoRef, { stock: parseInt(producto.item.stock) - parseInt(producto.cantidad) });
             });
             await batch.commit();
         } catch (error) {
             setError("Se produjo un error al procesar el pedido");
         }
+
     }
     return (
         <div>
@@ -104,3 +105,4 @@ const Checkout = () => {
 }
 
 export default Checkout
+

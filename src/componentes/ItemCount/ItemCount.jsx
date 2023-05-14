@@ -19,11 +19,11 @@ const ItemCount = ({ inicial, stock, funcionAgregar }) => {
     return (
         <>
         <div>
-            <button onClick={decrementar}>-</button>
+            <button onClick={decrementar} className='btn-item-count'>-</button>
             <p> {contador} </p>
-            <button onClick={incrementar}>+</button>
+            <button onClick={incrementar} className='btn-item-count'>+</button>
         </div>
-        <button onClick={()=> funcionAgregar(contador)}>Agregar Al Carrito</button>
+        <button onClick={()=> funcionAgregar(contador)} className='btn-item-count'>Agregar Al Carrito</button>
 
         </>
     )

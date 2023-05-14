@@ -1,7 +1,7 @@
-button {
-    background-color: chocolate ;
+.btn-item-count {
     border: none;
-    color: white;
+    background-color: #ffccd2;
+    color: #fff;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -9,6 +9,7 @@ button {
     font-size: 16px;
     margin: 5px;
     cursor: pointer;
+    text-shadow: black 0.1em 0.1em 0.2em;
 }
 
 p{
@@ -16,3 +17,7 @@ p{
     font-weight: bold;
     margin: 0 10px;
 }
+imgItemDetail {
+    width: 50vh;
+    max-width: 10px;
+}   
